@@ -1,11 +1,14 @@
 language: python
+
 python:
   - "2.7"
   - "3.5"
   - "3.6"
+
 install:
   - pip install -U pip
   - python setup.py develop
+
 before_script:
   - pip install -I -r test_requirements.txt
   - git clone https://github.com/z4r/python-coveralls-example.git
@@ -13,7 +16,9 @@ before_script:
   - git checkout -qf 3e82fd5159b84bebe9bc6c9fd3959f322e6f7098
   - py.test example/tests.py --cov=example
   - cd -
+
 script:
   - py.test coveralls/tests.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
+
 after_success:
   - coveralls
