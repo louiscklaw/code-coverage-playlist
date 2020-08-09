@@ -20,5 +20,5 @@ jobs:
 
 import:
   - credentials.yml
-  - .travis-stage.yml
+  - .travis-stages.yml
   - .travis-merger.yml
